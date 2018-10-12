@@ -8,10 +8,14 @@ $(document).ready(function() {
   $('#queryAPI').submit(function(event) {
     event.preventDefault();
     const condition = $('#condition').val();
-    const newQuery = new BetterQuery();
+    let newQuery = new BetterQuery();
     newQuery.getQueries(condition);
     console.log(newQuery)
     newQuery.requestAPI();
+    console.log(newQuery);
+    newQuery.doctorArray.forEach(function(doctor) {
+      $('#outputArea').append("<p>" + doctor.name + "</p>");
+    });
     $('#condition').val("");
   })
 });
