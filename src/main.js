@@ -2,20 +2,24 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import BetterQuery from './BetterQuery.js';
+import DoctorAPI from './DoctorAPI';
+
 
 $(document).ready(function() {
   $('#queryAPI').submit(function(event) {
     event.preventDefault();
     const condition = $('#condition').val();
-    let newQuery = new BetterQuery();
-    newQuery.getQueries(condition);
-    console.log(newQuery)
-    newQuery.requestAPI();
-    console.log(newQuery);
-    newQuery.doctorArray.forEach(function(doctor) {
-      $('#outputArea').append("<p>" + doctor.name + "</p>");
+    let doctorAPI = new DoctorAPI();
+    let promise = doctorAPI.getDoctorInfo(condition);
+
+    promise.then(function(response) {
+      let body = JSON.parse(response);
+      let practiceArray = body.data;
+      practiceArray.forEach(function(practice) {
+        $('#outputArea').append("<p>" + practice.practices[0].name + "</p>");
+      });
+
     });
     $('#condition').val("");
-  })
+  });
 });
