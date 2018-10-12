@@ -11,6 +11,7 @@ $(document).ready(function() {
     const newQuery = new BetterQuery();
     newQuery.getQueries(condition);
     console.log(newQuery)
+    newQuery.requestAPI();
     $('#condition').val("");
   })
 });
