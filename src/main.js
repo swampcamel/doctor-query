@@ -16,7 +16,12 @@ $(document).ready(function() {
       let body = JSON.parse(response);
       let practiceArray = body.data;
       practiceArray.forEach(function(practice) {
-        $('#outputArea').append("<p>" + practice.practices[0].name + "</p>");
+        $('#outputArea').append("<div><p><strong>" + practice.practices[0].name +
+         "</strong></p><p>" + practice.practices[0].visit_address.street +
+          " </p><p>" + practice.practices[0].visit_address.street2 +
+           "</p><p><span>" + practice.practices[0].visit_address.city +
+            ", </span><span>" + practice.practices[0].visit_address.state +
+            "</span></p><p>" + practice.practices[0].visit_address.zip + "</p></div>");
       });
 
     });
