@@ -6,3 +6,18 @@
 #condition, #doctor-name {
   width: 400px;
 }
+
+.doctor-info {
+  border: 2px dashed #000;
+  padding: 2%;
+  margin-top: 10px;
+}
+
+.info-wrapper {
+  display: flex;
+}
+
+.doctor-name {
+  text-align: center;
+  font-size: 18px;
+}
