@@ -9,8 +9,9 @@ $(document).ready(function() {
   $('#queryAPI').submit(function(event) {
     event.preventDefault();
     const condition = $('#condition').val();
+    const doctorName = $('#doctor-name').val();
     let doctorAPI = new DoctorAPI();
-    let promise = doctorAPI.getDoctorInfo(condition);
+    let promise = doctorAPI.getDoctorInfo(condition, doctorName);
 
     promise.then(function(response) {
       let body = JSON.parse(response);

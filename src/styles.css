@@ -3,6 +3,6 @@
   padding: 0 auto;
 }
 
-#condition {
-  width: 600px;
+#condition, #doctor-name {
+  width: 400px;
 }
