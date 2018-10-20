@@ -15,8 +15,7 @@ export default class DoctorAPI {
       request.send();
     });
   } else {
-    console.log("else")
-    let splitName = nameInput.split(" ");
+    const splitName = nameInput.split(" ");
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
       let url = `https://api.betterdoctor.com/2016-03-01/doctors?first_name=${splitName[0]}&last_name=${splitName[1]}&location=or-portland&skip=0&user_key=${process.env.exports.apiKey}`;

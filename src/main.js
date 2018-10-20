@@ -10,12 +10,12 @@ $(document).ready(function() {
     event.preventDefault();
     const condition = $('#condition').val();
     const doctorName = $('#doctor-name').val();
-    let doctorAPI = new DoctorAPI();
-    let promise = doctorAPI.getDoctorInfo(condition, doctorName);
+    const doctorAPI = new DoctorAPI();
+    const promise = doctorAPI.getDoctorInfo(condition, doctorName);
 
     promise.then(function(response) {
-      let body = JSON.parse(response);
-      let practiceArray = body.data;
+      const body = JSON.parse(response);
+      const practiceArray = body.data;
       $("#outputArea").empty();
       if (practiceArray.length === 0) {
         $('#outputArea').text("Your search returned no results.");
@@ -31,8 +31,11 @@ $(document).ready(function() {
           "</p><p>Website: " + practice.practices[0].website +
           "<p>Accepting New Patients: " + practice.practices[0].accepts_new_patients + "</p></div></div></div>");
         });
-      }
-    });
+        }
+        }, function(error) {
+          const errorMessage = `Your search responded with the following error: ${error.message}`;
+          $('#outputArea').text(errorMessage);
+        });
     $('#condition').val("");
   });
 });

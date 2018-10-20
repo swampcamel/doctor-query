@@ -28,6 +28,11 @@ Doctor Query is a JS sandbox practicing the use of API calls on BetterDoctor API
 * Install Node.js
 * Install karma-cli globally: `npm install -g karma-cli`
 * Clone the repo
+
+* Create a new `.env` file in the app's root directory
+* Add following line, replacing the bracketed area with your API Key (no brackets).
+$ exports.apiKey=[your-api-key]
+
 * `npm install` to install dependencies
 * `npm run start` to build and start the dev server
 * `npm run lint` to explicitly run ESLint
