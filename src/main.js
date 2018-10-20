@@ -37,5 +37,6 @@ $(document).ready(function() {
           $('#outputArea').text(errorMessage);
         });
     $('#condition').val("");
+    $('#doctor-name').val("");
   });
 });
