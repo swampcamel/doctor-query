@@ -12,7 +12,7 @@ Doctor Query is a JS sandbox practicing the use of API calls on BetterDoctor API
 
 | Behavior | Input | Output |
 |----------|-------|--------|
-| Produces a list of docto's who can treat a user's medical condition | Medical Condition | List of doctors who can treat that |
+| Produces a list of doctor's who can treat a user's medical condition | Medical Condition | List of doctors who can treat that |
 | Displays an error if the API call fails | Medical Condition | Error Code and Message |
 | Displays a message if there are no results for the given search term | Search Term | "We couldn't find any results for your search." |
 | Displays meta information on each doctor pulled from the API | Search Term | Name, Location, Contact Info, Website and Availability for each doctor |
